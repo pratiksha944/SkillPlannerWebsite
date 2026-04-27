@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Planner — SkillForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Skill<span>Forge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="planner.html" class="active">Planner</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="planner.html" class="btn-cta">Start Planning</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Build Your Roadmap</div>
+    <h1>My Skill <em>Planner</em></h1>
+    <p>Create a personalized learning plan with goals, timelines, and weekly schedules.</p>
+  </div>
+
+  <section class="planner-section">
+    <div class="planner-container">
+
+      <!-- FORM -->
+      <div class="planner-form-card">
+        <h2>Create a New Skill Plan</h2>
+
+        <div class="form-group">
+          <label>Skill Name *</label>
+          <input type="text" id="skillName" placeholder="e.g. Web Development, Python, UI Design"/>
+        </div>
+
+        <div class="form-group">
+          <label>Category</label>
+          <select id="skillCat">
+            <option>💻 Technology</option>
+            <option>🎨 Design</option>
+            <option>📊 Data Science</option>
+            <option>💼 Business</option>
+            <option>📚 Academic</option>
+            <option>🎵 Creative Arts</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Difficulty Level</label>
+          <div class="radio-group">
+            <label class="radio-opt"><input type="radio" name="level" value="Beginner" checked> Beginner</label>
+            <label class="radio-opt"><input type="radio" name="level" value="Intermediate"> Intermediate</label>
+            <label class="radio-opt"><input type="radio" name="level" value="Advanced"> Advanced</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Start Date *</label>
+            <input type="date" id="startDate"/>
+          </div>
+          <div class="form-group">
+            <label>Target End Date *</label>
+            <input type="date" id="endDate"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Hours Per Week: <span id="hrsVal">5</span> hrs</label>
+          <input type="range" id="hoursRange" min="1" max="40" value="5" oninput="updateHrs(this.value)"/>
+        </div>
+
+        <div class="form-group">
+          <label>Study Days</label>
+          <div class="days-group">
+            <label class="day-btn"><input type="checkbox" value="Mon" checked> Mon</label>
+            <label class="day-btn"><input type="checkbox" value="Tue" checked> Tue</label>
+            <label class="day-btn"><input type="checkbox" value="Wed"> Wed</label>
+            <label class="day-btn"><input type="checkbox" value="Thu" checked> Thu</label>
+            <label class="day-btn"><input type="checkbox" value="Fri"> Fri</label>
+            <label class="day-btn"><input type="checkbox" value="Sat"> Sat</label>
+            <label class="day-btn"><input type="checkbox" value="Sun"> Sun</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Learning Goals / Notes</label>
+          <textarea id="goalNotes" rows="3" placeholder="What do you want to achieve with this skill?"></textarea>
+        </div>
+
+        <button class="btn-primary btn-full" onclick="addPlan()">➕ Add to My Plan</button>
+      </div>
+
+      <!-- PLANS LIST -->
+      <div class="plans-list-card">
+        <h2>My Active Plans <span class="plan-count" id="planCount">0</span></h2>
+        <div id="plansContainer">
+          <div class="empty-state">
+            <div style="font-size:3rem">📋</div>
+            <p>No plans yet. Create your first skill plan!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEEKLY SCHEDULE VIEW -->
+    <div class="schedule-section">
+      <h2>📅 Weekly Learning Schedule</h2>
+      <div class="week-grid">
+        <div class="week-day">
+          <div class="wd-label">Monday</div>
+          <div class="wd-slot" id="slot-Mon">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Tuesday</div>
+          <div class="wd-slot" id="slot-Tue">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Wednesday</div>
+          <div class="wd-slot" id="slot-Wed">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Thursday</div>
+          <div class="wd-slot" id="slot-Thu">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Friday</div>
+          <div class="wd-slot" id="slot-Fri">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Saturday</div>
+          <div class="wd-slot" id="slot-Sat">—</div>
+        </div>
+        <div class="week-day">
+          <div class="wd-label">Sunday</div>
+          <div class="wd-slot" id="slot-Sun">—</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2024 SkillForge. Mini Project — Web Technologies | <a href="index.html">Back to Home</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

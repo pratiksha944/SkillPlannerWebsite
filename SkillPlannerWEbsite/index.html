@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkillForge — Plan. Learn. Master.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Skill<span>Forge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="planner.html">Planner</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="planner.html" class="btn-cta">Start Planning</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-anim"></div>
+    <div class="hero-content">
+      <span class="hero-badge">🔥 Your Personal Skill Roadmap</span>
+      <h1>Build Skills.<br><em>Build Your Future.</em></h1>
+      <p>SkillForge helps you plan, track, and master the skills that matter most — with structured roadmaps, progress tracking, and smart reminders.</p>
+      <div class="hero-btns">
+        <a href="planner.html" class="btn-primary">Create My Plan</a>
+        <a href="skills.html" class="btn-secondary">Browse Skills →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>120+</span><p>Skill Tracks</p></div>
+        <div class="stat"><span>5K+</span><p>Learners</p></div>
+        <div class="stat"><span>98%</span><p>Completion Rate</p></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card-float card1">
+        <div class="cf-icon">⚛️</div>
+        <div>
+          <strong>React.js</strong>
+          <div class="prog-bar"><div style="width:72%"></div></div>
+          <small>72% Complete</small>
+        </div>
+      </div>
+      <div class="card-float card2">
+        <div class="cf-icon">🎨</div>
+        <div>
+          <strong>UI Design</strong>
+          <div class="prog-bar"><div style="width:45%"></div></div>
+          <small>45% Complete</small>
+        </div>
+      </div>
+      <div class="card-float card3">
+        <div class="cf-icon">🐍</div>
+        <div>
+          <strong>Python</strong>
+          <div class="prog-bar"><div style="width:88%"></div></div>
+          <small>88% Complete</small>
+        </div>
+      </div>
+      <div class="hero-circle"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="section-label">Why SkillForge?</div>
+    <h2>Everything You Need to <em>Level Up</em></h2>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🗺️</div>
+        <h3>Skill Roadmaps</h3>
+        <p>Visual step-by-step paths for every skill — no guesswork, just clear direction.</p>
+      </div>
+      <div class="feat-card feat-highlight">
+        <div class="feat-icon">📅</div>
+        <h3>Smart Planner</h3>
+        <p>Schedule your weekly learning sessions and SkillForge handles the rest automatically.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📈</div>
+        <h3>Progress Tracking</h3>
+        <p>Visual dashboards show exactly how far you've come and what's next on your path.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎯</div>
+        <h3>Goal Setting</h3>
+        <p>Set milestones, deadlines, and celebrate achievements as you master each skill.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔔</div>
+        <h3>Reminders</h3>
+        <p>Never miss a learning session with smart, non-intrusive daily reminders.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🏆</div>
+        <h3>Certificates</h3>
+        <p>Earn skill badges and completion certificates to showcase your growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-label">Process</div>
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Choose a Skill</h3>
+        <p>Browse our library of 120+ skill tracks across tech, design, business, and more.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Build Your Plan</h3>
+        <p>Set your weekly hours, target date, and let SkillForge create your personalized schedule.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Track & Master</h3>
+        <p>Log your sessions, mark milestones, and watch your skill meter fill up over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR SKILLS PREVIEW -->
+  <section class="popular-skills">
+    <div class="section-label">Trending Now</div>
+    <h2>Popular <em>Skill Tracks</em></h2>
+    <div class="skills-preview-grid">
+      <a href="skills.html" class="skill-prev-card">
+        <span class="sp-icon">💻</span>
+        <h4>Web Development</h4>
+        <p>HTML, CSS, JS, React</p>
+        <span class="sp-tag">Beginner → Pro</span>
+      </a>
+      <a href="skills.html" class="skill-prev-card">
+        <span class="sp-icon">🤖</span>
+        <h4>Machine Learning</h4>
+        <p>Python, TensorFlow, Data</p>
+        <span class="sp-tag">Intermediate</span>
+      </a>
+      <a href="skills.html" class="skill-prev-card">
+        <span class="sp-icon">🎨</span>
+        <h4>UI/UX Design</h4>
+        <p>Figma, Wireframes, UX</p>
+        <span class="sp-tag">All Levels</span>
+      </a>
+      <a href="skills.html" class="skill-prev-card">
+        <span class="sp-icon">📊</span>
+        <h4>Data Science</h4>
+        <p>Excel, SQL, Python, Viz</p>
+        <span class="sp-tag">Beginner</span>
+      </a>
+    </div>
+    <a href="skills.html" class="btn-primary" style="margin-top:2.5rem;display:inline-block;">View All Skills →</a>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonials">
+    <div class="section-label">Student Reviews</div>
+    <h2>What Learners Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"SkillForge completely changed how I learn. I went from zero to building full-stack apps in 6 months!"</p>
+        <div class="testi-author"><div class="avatar">RK</div><div><strong>Rahul Kumar</strong><small>Full-Stack Developer</small></div></div>
+      </div>
+      <div class="testi-card testi-featured">
+        <p>"The structured roadmaps and weekly planner kept me consistent. Finished my Python track ahead of schedule!"</p>
+        <div class="testi-author"><div class="avatar">PA">PA</div><div><strong>Priya Anand</strong><small>Data Analyst</small></div></div>
+      </div>
+      <div class="testi-card">
+        <p>"Best skill planning tool I've used. Clean, simple, and actually works. Highly recommend to all students."</p>
+        <div class="testi-author"><div class="avatar">MS</div><div><strong>Mohammed Siddiq</strong><small>UI Designer</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2>Ready to Start Your Skill Journey?</h2>
+    <p>Join thousands of learners who are already forging their future — for free.</p>
+    <a href="planner.html" class="btn-primary btn-large">Get Started Free 🚀</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Skill<span>Forge</span></a>
+        <p>Your personal skill planning companion. Plan smart, learn fast, grow always.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Skills</h4>
+        <ul>
+          <li><a href="skills.html">Web Dev</a></li>
+          <li><a href="skills.html">Data Science</a></li>
+          <li><a href="skills.html">UI/UX Design</a></li>
+          <li><a href="skills.html">Machine Learning</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+          <li><a href="contact.html">Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 SkillForge. Mini Project — Web Technologies | All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

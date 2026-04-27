@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — SkillForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Skill<span>Forge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="planner.html">Planner</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="planner.html" class="btn-cta">Start Planning</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Get In Touch</div>
+    <h1>Contact <em>Us</em></h1>
+    <p>Have a question, suggestion, or feedback? We'd love to hear from you!</p>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <!-- INFO CARDS -->
+      <div class="contact-info">
+        <div class="ci-card">
+          <div class="ci-icon">📧</div>
+          <h4>Email</h4>
+          <p>hello@skillforge.in</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">📞</div>
+          <h4>Phone</h4>
+          <p>+91 98765 43210</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">📍</div>
+          <h4>Location</h4>
+          <p>Nashik, Maharashtra, India</p>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon">⏰</div>
+          <h4>Support Hours</h4>
+          <p>Mon – Sat, 9AM – 6PM IST</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="soc-btn">🐦 Twitter</a>
+          <a href="#" class="soc-btn">💼 LinkedIn</a>
+          <a href="#" class="soc-btn">🐙 GitHub</a>
+          <a href="#" class="soc-btn">📸 Instagram</a>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-card">
+        <h2>Send Us a Message</h2>
+
+        <div id="formSuccess" class="success-banner" style="display:none;">
+          ✅ Message sent successfully! We'll get back to you within 24 hours.
+        </div>
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="cName" placeholder="Your full name"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="cEmail" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="cPhone" placeholder="+91 XXXXX XXXXX"/>
+        </div>
+        <div class="form-group">
+          <label>Subject *</label>
+          <select id="cSubject">
+            <option>General Enquiry</option>
+            <option>Technical Support</option>
+            <option>Feature Request</option>
+            <option>Report a Bug</option>
+            <option>Partnership</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea id="cMessage" rows="5" placeholder="Write your message here..."></textarea>
+        </div>
+        <div class="form-group checkbox-group">
+          <label><input type="checkbox" id="cNewsletter"> Subscribe to our newsletter for learning tips</label>
+        </div>
+
+        <button class="btn-primary btn-full" onclick="submitContact()">Send Message 📨</button>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Is SkillForge free to use? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes! SkillForge is completely free for all students and self-learners. We believe quality skill planning should be accessible to everyone.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Can I track multiple skills at once? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Absolutely! You can add as many skill plans as you need and track all of them simultaneously from your Progress dashboard.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Does SkillForge provide learning resources? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">SkillForge provides structured roadmaps and planning tools. For actual content, we recommend pairing it with platforms like Coursera, YouTube, or freeCodeCamp.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I earn badges and certificates? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Badges are earned automatically based on milestones — like logging your first session, maintaining a streak, or completing a skill track 100%.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Can I share my progress with others? <span class="faq-arrow">▼</span></div>
+          <div class="faq-a">Yes! Your progress dashboard can be shared as a public profile link. Showcase your completed skills and achievements on LinkedIn or your portfolio.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Skill<span>Forge</span></a>
+        <p>Your personal skill planning companion.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="planner.html">Planner</a></li>
+          <li><a href="progress.html">Progress</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 SkillForge. Mini Project — Web Technologies | All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

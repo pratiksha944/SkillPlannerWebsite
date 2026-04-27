@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse Skills — SkillForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Skill<span>Forge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="planner.html">Planner</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="planner.html" class="btn-cta">Start Planning</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Explore</div>
+    <h1>Browse <em>Skill Tracks</em></h1>
+    <p>Choose from 120+ curated skill paths built by industry experts.</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <section class="skills-section">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterSkills('all',this)">All</button>
+      <button class="filter-btn" onclick="filterSkills('tech',this)">💻 Technology</button>
+      <button class="filter-btn" onclick="filterSkills('design',this)">🎨 Design</button>
+      <button class="filter-btn" onclick="filterSkills('data',this)">📊 Data</button>
+      <button class="filter-btn" onclick="filterSkills('business',this)">💼 Business</button>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="skillSearch" placeholder="🔍  Search skills..." oninput="searchSkills(this.value)">
+    </div>
+
+    <div class="skills-grid" id="skillsGrid">
+      <!-- Tech -->
+      <div class="skill-card" data-cat="tech">
+        <div class="sc-header tech-bg">
+          <span class="sc-icon">🌐</span>
+          <span class="sc-level">Beginner → Pro</span>
+        </div>
+        <div class="sc-body">
+          <h3>Web Development</h3>
+          <p>Master HTML, CSS, JavaScript, and React to build modern websites from scratch.</p>
+          <div class="sc-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+          <div class="sc-meta">
+            <span>⏱ 120 hrs</span>
+            <span>📚 24 modules</span>
+          </div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tech">
+        <div class="sc-header purple-bg">
+          <span class="sc-icon">⚙️</span>
+          <span class="sc-level">Intermediate</span>
+        </div>
+        <div class="sc-body">
+          <h3>Backend Development</h3>
+          <p>Learn Node.js, Express, REST APIs, and databases to power web applications.</p>
+          <div class="sc-tags"><span>Node.js</span><span>Express</span><span>MongoDB</span></div>
+          <div class="sc-meta"><span>⏱ 100 hrs</span><span>📚 20 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tech">
+        <div class="sc-header orange-bg">
+          <span class="sc-icon">📱</span>
+          <span class="sc-level">Intermediate</span>
+        </div>
+        <div class="sc-body">
+          <h3>Mobile App Development</h3>
+          <p>Build cross-platform mobile apps using React Native and Flutter.</p>
+          <div class="sc-tags"><span>React Native</span><span>Flutter</span><span>Dart</span></div>
+          <div class="sc-meta"><span>⏱ 90 hrs</span><span>📚 18 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="tech">
+        <div class="sc-header green-bg">
+          <span class="sc-icon">🔐</span>
+          <span class="sc-level">Advanced</span>
+        </div>
+        <div class="sc-body">
+          <h3>Cybersecurity</h3>
+          <p>Understand ethical hacking, network security, and vulnerability assessment.</p>
+          <div class="sc-tags"><span>Linux</span><span>Networking</span><span>Pen Testing</span></div>
+          <div class="sc-meta"><span>⏱ 150 hrs</span><span>📚 30 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="skill-card" data-cat="design">
+        <div class="sc-header pink-bg">
+          <span class="sc-icon">🎨</span>
+          <span class="sc-level">All Levels</span>
+        </div>
+        <div class="sc-body">
+          <h3>UI/UX Design</h3>
+          <p>Design beautiful interfaces with Figma, prototyping, and UX research methods.</p>
+          <div class="sc-tags"><span>Figma</span><span>Wireframing</span><span>UX Research</span></div>
+          <div class="sc-meta"><span>⏱ 80 hrs</span><span>📚 16 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="design">
+        <div class="sc-header yellow-bg">
+          <span class="sc-icon">✏️</span>
+          <span class="sc-level">Beginner</span>
+        </div>
+        <div class="sc-body">
+          <h3>Graphic Design</h3>
+          <p>Create stunning visuals using Photoshop, Illustrator, and design principles.</p>
+          <div class="sc-tags"><span>Photoshop</span><span>Illustrator</span><span>Canva</span></div>
+          <div class="sc-meta"><span>⏱ 70 hrs</span><span>📚 14 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <!-- Data -->
+      <div class="skill-card" data-cat="data">
+        <div class="sc-header blue-bg">
+          <span class="sc-icon">📊</span>
+          <span class="sc-level">Beginner → Mid</span>
+        </div>
+        <div class="sc-body">
+          <h3>Data Science</h3>
+          <p>Learn data analysis, visualization, and storytelling with Python and Excel.</p>
+          <div class="sc-tags"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>SQL</span></div>
+          <div class="sc-meta"><span>⏱ 110 hrs</span><span>📚 22 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="data">
+        <div class="sc-header teal-bg">
+          <span class="sc-icon">🤖</span>
+          <span class="sc-level">Intermediate</span>
+        </div>
+        <div class="sc-body">
+          <h3>Machine Learning</h3>
+          <p>Understand ML algorithms, neural networks, and build AI-powered applications.</p>
+          <div class="sc-tags"><span>Python</span><span>TensorFlow</span><span>scikit-learn</span></div>
+          <div class="sc-meta"><span>⏱ 130 hrs</span><span>📚 26 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <!-- Business -->
+      <div class="skill-card" data-cat="business">
+        <div class="sc-header gold-bg">
+          <span class="sc-icon">📈</span>
+          <span class="sc-level">All Levels</span>
+        </div>
+        <div class="sc-body">
+          <h3>Digital Marketing</h3>
+          <p>Master SEO, social media, email campaigns, and paid advertising strategies.</p>
+          <div class="sc-tags"><span>SEO</span><span>Google Ads</span><span>Analytics</span></div>
+          <div class="sc-meta"><span>⏱ 60 hrs</span><span>📚 12 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+
+      <div class="skill-card" data-cat="business">
+        <div class="sc-header red-bg">
+          <span class="sc-icon">💼</span>
+          <span class="sc-level">Intermediate</span>
+        </div>
+        <div class="sc-body">
+          <h3>Project Management</h3>
+          <p>Learn Agile, Scrum, and tools like Jira and Trello to manage teams effectively.</p>
+          <div class="sc-tags"><span>Agile</span><span>Scrum</span><span>Jira</span></div>
+          <div class="sc-meta"><span>⏱ 50 hrs</span><span>📚 10 modules</span></div>
+          <a href="planner.html" class="btn-small">Add to Plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2024 SkillForge. Mini Project — Web Technologies | <a href="index.html">Back to Home</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

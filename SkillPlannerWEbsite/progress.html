@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress — SkillForge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Skill<span>Forge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="planner.html">Planner</a></li>
+      <li><a href="progress.html" class="active">Progress</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="planner.html" class="btn-cta">Start Planning</a>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="section-label">Dashboard</div>
+    <h1>My <em>Progress</em></h1>
+    <p>Track your learning journey — see how far you've come and what's ahead.</p>
+  </div>
+
+  <section class="progress-section">
+
+    <!-- STATS ROW -->
+    <div class="dash-stats">
+      <div class="ds-card">
+        <div class="ds-icon">🎯</div>
+        <div class="ds-info">
+          <span class="ds-num" id="totalSkills">3</span>
+          <p>Active Skills</p>
+        </div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-icon">⏱️</div>
+        <div class="ds-info">
+          <span class="ds-num">47</span>
+          <p>Hours Logged</p>
+        </div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-icon">🔥</div>
+        <div class="ds-info">
+          <span class="ds-num">12</span>
+          <p>Day Streak</p>
+        </div>
+      </div>
+      <div class="ds-card">
+        <div class="ds-icon">🏆</div>
+        <div class="ds-info">
+          <span class="ds-num">2</span>
+          <p>Completed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILL PROGRESS BARS -->
+    <div class="progress-cards">
+      <h2>Skill Progress Tracker</h2>
+
+      <div class="prog-skill-card">
+        <div class="psc-header">
+          <div>
+            <span class="psc-icon">⚛️</span>
+            <strong>React.js</strong>
+            <small>💻 Technology</small>
+          </div>
+          <div class="psc-pct" id="react-pct">72%</div>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill" id="react-fill" style="width:72%"></div>
+        </div>
+        <div class="psc-meta">
+          <span>Started: Jan 10, 2024</span>
+          <span>Target: Apr 30, 2024</span>
+          <span>72 / 100 hrs</span>
+        </div>
+        <div class="psc-actions">
+          <button class="btn-small" onclick="updateProgress('react', 5)">+5 hrs</button>
+          <button class="btn-small btn-outline" onclick="updateProgress('react', 10)">+10 hrs</button>
+          <button class="btn-small btn-danger" onclick="resetProgress('react')">Reset</button>
+        </div>
+      </div>
+
+      <div class="prog-skill-card">
+        <div class="psc-header">
+          <div>
+            <span class="psc-icon">🐍</span>
+            <strong>Python Programming</strong>
+            <small>📊 Data Science</small>
+          </div>
+          <div class="psc-pct" id="python-pct">88%</div>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill prog-fill-green" id="python-fill" style="width:88%"></div>
+        </div>
+        <div class="psc-meta">
+          <span>Started: Dec 1, 2023</span>
+          <span>Target: Mar 31, 2024</span>
+          <span>88 / 100 hrs</span>
+        </div>
+        <div class="psc-actions">
+          <button class="btn-small" onclick="updateProgress('python', 5)">+5 hrs</button>
+          <button class="btn-small btn-outline" onclick="updateProgress('python', 10)">+10 hrs</button>
+          <button class="btn-small btn-danger" onclick="resetProgress('python')">Reset</button>
+        </div>
+      </div>
+
+      <div class="prog-skill-card">
+        <div class="psc-header">
+          <div>
+            <span class="psc-icon">🎨</span>
+            <strong>UI/UX Design</strong>
+            <small>🎨 Design</small>
+          </div>
+          <div class="psc-pct" id="uiux-pct">45%</div>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill prog-fill-pink" id="uiux-fill" style="width:45%"></div>
+        </div>
+        <div class="psc-meta">
+          <span>Started: Feb 15, 2024</span>
+          <span>Target: Jun 30, 2024</span>
+          <span>45 / 100 hrs</span>
+        </div>
+        <div class="psc-actions">
+          <button class="btn-small" onclick="updateProgress('uiux', 5)">+5 hrs</button>
+          <button class="btn-small btn-outline" onclick="updateProgress('uiux', 10)">+10 hrs</button>
+          <button class="btn-small btn-danger" onclick="resetProgress('uiux')">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOG SESSION -->
+    <div class="log-session-card">
+      <h2>📝 Log a Learning Session</h2>
+      <div class="log-form">
+        <div class="form-group">
+          <label>Skill</label>
+          <select id="logSkill">
+            <option>React.js</option>
+            <option>Python Programming</option>
+            <option>UI/UX Design</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="logDate"/>
+        </div>
+        <div class="form-group">
+          <label>Hours Studied</label>
+          <input type="number" id="logHrs" min="0.5" max="12" step="0.5" placeholder="e.g. 2.5"/>
+        </div>
+        <div class="form-group">
+          <label>What did you learn?</label>
+          <textarea id="logNotes" rows="2" placeholder="Topics covered, breakthroughs, questions..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="logSession()">Log Session ✓</button>
+      </div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="badges-section">
+      <h2>🏅 My Achievements</h2>
+      <div class="badges-grid">
+        <div class="badge earned">
+          <div class="badge-icon">🌟</div>
+          <p>First Step</p>
+          <small>Started first skill</small>
+        </div>
+        <div class="badge earned">
+          <div class="badge-icon">🔥</div>
+          <p>On Fire</p>
+          <small>7-day streak</small>
+        </div>
+        <div class="badge earned">
+          <div class="badge-icon">⏰</div>
+          <p>Dedicated</p>
+          <small>10+ hours logged</small>
+        </div>
+        <div class="badge locked">
+          <div class="badge-icon">💎</div>
+          <p>Diamond Coder</p>
+          <small>Complete 3 skills</small>
+        </div>
+        <div class="badge locked">
+          <div class="badge-icon">🚀</div>
+          <p>Rocket Learner</p>
+          <small>50+ hours logged</small>
+        </div>
+        <div class="badge locked">
+          <div class="badge-icon">🏆</div>
+          <p>Master</p>
+          <small>100% on any skill</small>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2024 SkillForge. Mini Project — Web Technologies | <a href="index.html">Back to Home</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
